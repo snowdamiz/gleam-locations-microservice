@@ -6,6 +6,7 @@ pub type Context {
 
 pub fn middleware(
   req: wisp.Request,
+  _ctx: Context,
   handle_request: fn(wisp.Request) -> wisp.Response,
 ) -> wisp.Response {
   let req = wisp.method_override(req)
